@@ -6,20 +6,20 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/namanaresh/spring-boot-cicd-demo.git'
             }
         }
-        // stage('Build') {
-        //     steps {
-        //         // Assuming Maven is used
-        //         sh 'mvn clean package'
-        //     }
-        // }
-        // stage('Docker Build') {
-        //     steps {
-        //         script {
-        //             // Builds the Docker image locally on the Jenkins machine
-        //             sh 'docker build -t spring-boot-app:latest .'
-        //         }
-        //     }
-        // }
+        stage('Build') {
+            steps {
+                // Assuming Maven is used
+                sh 'mvn clean package'
+            }
+        }
+        stage('Docker Build') {
+            steps {
+                script {
+                    // Builds the Docker image locally on the Jenkins machine
+                    sh 'docker build -t spring-boot-app:latest .'
+                }
+            }
+        }
         // stage('Deploy') {
         //     steps {
         //         script {

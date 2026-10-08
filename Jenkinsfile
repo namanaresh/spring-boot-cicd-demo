@@ -30,7 +30,7 @@ pipeline {
                     bat 'docker stop spring-boot-container || true'
                     bat 'docker rm spring-boot-container || true'
                     // Run the new container
-                    bat 'docker run -d --name spring-boot-container -p 8080:8080 spring-boot-app:latest'
+                    bat 'docker run -d --name spring-boot-container -p 8089:8080 spring-boot-app:latest'
                 }
             }
         }

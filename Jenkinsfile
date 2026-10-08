@@ -15,14 +15,14 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
-        // stage('Docker Build') {
-        //     steps {
-        //         script {
-        //             // Builds the Docker image locally on the Jenkins machine
-        //             bat 'docker build -t spring-boot-app:latest .'
-        //         }
-        //     }
-        // }
+        stage('Docker Build') {
+            steps {
+                script {
+                    // Builds the Docker image locally on the Jenkins machine
+                    bat 'docker build -t spring-boot-app:latest .'
+                }
+            }
+        }
         // stage('Deploy') {
         //     steps {
         //         script {

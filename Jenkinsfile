@@ -27,6 +27,7 @@ pipeline {
             steps {
                 script {
                     // Run the new container
+                    bat 'docker rm -f spring-boot-container || exit 0'
                     bat 'docker run -d --name spring-boot-container -p 8089:8080 spring-boot-app:latest'
                 }
             }
